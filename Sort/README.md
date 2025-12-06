@@ -1,1 +1,1 @@
-Dosyaların içine girerek istediğiniz sort algoritmalarını görebilirsiniz.
+Dosyaların içine girerek istediğiniz sort algoritmalarını c++ dilinde görebilirsiniz.
