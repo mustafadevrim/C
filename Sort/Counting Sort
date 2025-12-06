@@ -1,0 +1,55 @@
+#include <iostream>
+
+using namespace std;
+
+void countSort(int arr[], int n) {
+    int max_val = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > max_val) {
+            max_val = arr[i];
+        }
+    }
+
+    int k = max_val + 1;
+    int* count = new int[k];
+    int* output = new int[n];
+
+    for (int i = 0; i < k; i++) {
+        count[i] = 0;
+    }
+
+    for (int i = 0; i < n; i++) {
+        count[arr[i]]++;
+    }
+
+    for (int i = 1; i < k; i++) {
+        count[i] += count[i - 1];
+    }
+
+    for (int i = n - 1; i >= 0; i--) {
+        output[count[arr[i]] - 1] = arr[i];
+        count[arr[i]]--;
+    }
+
+    for (int i = 0; i < n; i++) {
+        arr[i] = output[i];
+    }
+    
+    delete[] count;
+    delete[] output;
+}
+
+void printArray(int arr[], int n) {
+    for (int i = 0; i < n; ++i)
+        cout << arr[i] << " ";
+    cout << "\n";
+}
+
+int main() {
+    int arr[] = {4, 2, 2, 8, 3, 3, 1};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    countSort(arr, n);
+
+    return 0;
+}
