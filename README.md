@@ -1,1 +1,1 @@
-# C++ algoritmalarını isimlerina bakarak bulabilirsiniz.
+# C++ algoritmalarını isimlerine bakarak bulabilirsiniz.
